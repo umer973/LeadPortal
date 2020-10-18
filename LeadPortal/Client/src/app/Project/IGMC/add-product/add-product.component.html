@@ -1,0 +1,297 @@
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row ">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-info">
+                        <div class="card-header">
+                          <h3 class="card-title">Add Product</h3>
+                        </div>
+                            <form [formGroup]="addproductForm" >
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <!--  test
+                                            <mat-form-field>
+                                            <input matInput placeholder="Enter Title" formControlName="title">
+                                           <mat-error *ngFor="let validation of validation_messages.title">
+                                                <mat-error class="error-message" *ngIf="addproductForm.get('title').hasError(validation.type) 
+                                                && (addproductForm.get('title').dirty || addproductForm.get('title').touched)">{{validation.message}}</mat-error>
+                                              </mat-error> 
+                                          </mat-form-field>-->
+                                          <label class="form-check-label" for="exampleCheck2">Enter Title</label>
+                                            <input placeholder="Enter Title" id="title" autocomplete="off" formControlName="title"
+                                                class="form-control"
+                                                [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
+                                            <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                                                <div *ngIf="f.title.errors.required">Title is required</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-check-label" for="exampleCheck2">Enter Description</label>
+                                            <textarea class="form-control"  autocomplete="off" rows="3"
+                                                placeholder="Enter Description ..."></textarea>
+                                             <!-- <mat-form-field>
+                                                <textarea matInput placeholder="Enter Description ..." formControlName="title" >       
+                                                </textarea>
+                                              </mat-form-field>  -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                              <!-- <mat-form-field>
+                                            <input matInput placeholder="Enter CostPrice" formControlName="costprice">
+                                          </mat-form-field> -->
+                                          
+                                          <label class="form-check-label" for="exampleCheck2">Enter CostPrice</label>
+                                            <input placeholder="Enter CostPrice" id="costprice" autocomplete="off"
+                                                formControlName="costprice" class="form-control"
+                                                [ngClass]="{ 'is-invalid': submitted && f.costprice.errors }" />
+                                            <div *ngIf="submitted && f.costprice.errors" class="invalid-feedback">
+                                                <div *ngIf="f.costprice.errors.required">cost price is required</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                             <!-- <mat-form-field>
+                                            <input matInput placeholder="Enter sellingPrice" formControlName="sellingPrice">
+                                          </mat-form-field> -->
+                                          <label class="form-check-label" for="exampleCheck2">Enter sellingprice</label>
+                                            <input placeholder="Enter sellingPrice" id="sellingprice"
+                                                formControlName="sellingprice" class="form-control"
+                                                [ngClass]="{ 'is-invalid': submitted && f.sellingprice.errors }" />
+                                            <div *ngIf="submitted && f.sellingprice.errors" class="invalid-feedback">
+                                                <div *ngIf="f.sellingprice.errors.required">sellingPrice is required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                              <!-- <mat-form-field>
+                                            <input matInput placeholder="Enter CGST" formControlName="cgst">
+                                          </mat-form-field> -->
+                                          <label class="form-check-label" for="exampleCheck2">Enter CGST</label>
+                                            <input placeholder="Enter CGST" id="cgst" autocomplete="off" formControlName="cgst"
+                                                class="form-control"
+                                                [ngClass]="{ 'is-invalid': submitted && f.cgst.errors }" />
+                                            <div *ngIf="submitted && f.cgst.errors" class="invalid-feedback">
+                                                <div *ngIf="f.cgst.errors.required">CGST is required</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                             <!-- <mat-form-field>
+                                            <input matInput placeholder="Enter SGST" formControlName="sgst">
+                                          </mat-form-field> -->
+                                          <label class="form-check-label" for="exampleCheck2">Enter SGST</label>
+                                            <input placeholder="Enter SGST" id="sgst" formControlName="sgst"
+                                                class="form-control"
+                                                [ngClass]="{ 'is-invalid': submitted && f.sgst.errors }" />
+                                            <div *ngIf="submitted && f.sgst.errors" class="invalid-feedback">
+                                                <div *ngIf="f.sgst.errors.required">SGST is required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <!-- <label>Select Category</label> -->
+                                            <!-- <mat-form-field>
+                                                <mat-select >
+                                                    <mat-option value="0">--Select Category--</mat-option>
+                                                    <mat-option value="1">Option 1</mat-option>
+                                                    <mat-option value="2">Option 2</mat-option>
+                                                </mat-select>
+                                            </mat-form-field> -->
+                                            <label class="form-check-label" for="exampleCheck2">Enter Category</label>
+                                                <select formControlName="category" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.category.errors }">
+                                                <option value="0">--Select Category--</option>
+                                                <option>option 1</option>
+                                                <option>option 2</option>
+                                                <option>option 3</option>
+                                                <option>option 4</option>
+                                                <option>option 5</option>
+                                                <!-- <option *ngFor="let summary of summaries" value={{summary}}>
+                                                {{summary}}
+                                            </option> -->
+                                            </select>
+                                                <div *ngIf="submitted && f.category.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.category.errors.required">Category is required</div>
+                                                </div>
+                                            
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-check-label" for="exampleCheck2">Enter Brand</label>
+                                            <select formControlName="brand" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.brand.errors }">
+                                                <option value="0">--Select Brand--</option>
+                                                <option>option 1</option>
+                                                <option>option 2</option>
+                                                <option>option 3</option>
+                                                <option>option 4</option>
+                                                <option>option 5</option>
+                                                <!-- <option *ngFor="let summary of summaries" value={{summary}}>
+                                                {{summary}}
+                                            </option> -->
+                                            </select>
+                                                <div *ngIf="submitted && f.brand.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.brand.errors.required">Brand is required</div>
+                                                </div>
+                                             <!-- <mat-form-field>
+                                                <mat-select >
+                                                    <mat-option value="0">--Select Brand--</mat-option>
+                                                    <mat-option value="1">Option 1</mat-option>
+                                                    <mat-option value="2">Option 2</mat-option>
+                                                </mat-select>
+                                            </mat-form-field> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="form-check-label" for="exampleCheck2">Choose Image</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" formControlName="image"class="custom-file-input" id="chooseimage">
+                                                    <label class="custom-file-label" for="exampleInputFile">Choose Image
+                                                    </label>
+                                                    <div *ngIf="submitted && f.image.errors" class="invalid-feedback">
+                                                        <div *ngIf="f.image.errors.required">Image is required</div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="input-group-append">
+                                                <span class="input-group-text" id="">Upload</span>
+                                            </div> -->
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                              <!-- <mat-form-field>
+                                            <input matInput placeholder="Enter Pieces" formControlName="pieces">
+                                          </mat-form-field> -->
+                                          <label class="form-check-label" for="exampleCheck2">Enter Pieces</label>
+                                            <input type="number" placeholder="Enter Pieces" id="pieces"
+                                                formControlName="pieces" class="form-control"
+                                                [ngClass]="{ 'is-invalid': submitted && f.pieces.errors }" />
+                                            <div *ngIf="submitted && f.pieces.errors" class="invalid-feedback">
+                                                <div *ngIf="f.pieces.errors.required">Pieces is required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <!-- <mat-form-field>
+                                                <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                                <mat-datepicker #picker></mat-datepicker>
+                                              </mat-form-field> -->
+                                            <!-- <label>Expiry Date</label> -->
+                                            <!-- <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>
+                                                </div>
+                                                <input type="text" placeholder="Expiry Date"
+                                                    formControlName="expirydate" class="form-control float-right"
+                                                    id="expirydate">
+                                            </div> -->
+                                            <label class="form-check-label" for="exampleCheck2">Enter Expirydate</label>
+                                            <div class="input-group">
+                                                <input type="text"
+                                                      placeholder="Expiry Date"  formControlName="expirydate"
+                                                      class="form-control"
+                                                      bsDatepicker [ngClass]="{ 'is-invalid': submitted && f.expirydate.errors }" />
+                                                      <div *ngIf="submitted && f.expirydate.errors" class="invalid-feedback">
+                                                          <div *ngIf="f.expirydate.errors.required">Expiry Date is required</div>
+                                                      </div>
+                                              </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                             <!-- <mat-form-field>
+                                                <mat-select >
+                                                    <mat-option value="0">--Select HSN--</mat-option>
+                                                    <mat-option value="1">Option 1</mat-option>
+                                                    <mat-option value="2">Option 2</mat-option>
+                                                </mat-select>
+                                            </mat-form-field> -->
+                                            <label class="form-check-label" for="exampleCheck2">Enter HSN</label>
+                                            <select formControlName="hsn"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.hsn.errors }">
+                                                <option value="0">--Select HSN--</option>
+                                                <option>option 1</option>
+                                                <option>option 2</option>
+                                                <option>option 3</option>
+                                                <option>option 4</option>
+                                                <option>option 5</option>
+                                                <!-- <option *ngFor="let summary of summaries" value={{summary}}>
+                                                {{summary}}
+                                            </option> -->
+                                            </select>
+                                                <div *ngIf="submitted && f.hsn.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.hsn.errors.required">HSN is required</div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                             <!-- <mat-form-field>
+                                            <input matInput placeholder="Enter SGST" formControlName="weight">
+                                          </mat-form-field> -->
+                                          <label class="form-check-label" for="exampleCheck2">Enter weight</label>
+                                            <input placeholder="Enter weight in gms, kgs" id="weight"
+                                                formControlName="weight" class="form-control"
+                                                [ngClass]="{ 'is-invalid': submitted && f.weight.errors }" />
+                                            <div *ngIf="submitted && f.weight.errors" class="invalid-feedback">
+                                                <div *ngIf="f.weight.errors.required">weight is required</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-check-label" for="exampleCheck2">Enter Company Discount</label>
+                                                <input type="number" placeholder="Enter Company Discount" id="companydiscount"
+                                                formControlName="companydiscount" class="form-control"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+
+                            <div class="card-footer float-right">
+                                <button type="button" (click)="onSave()" class="btn btn-info ">Save</button>
+                                <button type="button" (click)="onSaveAndContinue()"
+                                    class="btn btn-info buttonalign">Save And Continue</button>
+                                    <!-- <button mat-button  (click)="onSave()">Save</button>
+                                    <button mat-button  (click)="onSaveAndContinue()">Save And Continue</button> -->
+
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!--/.col (left) -->
+                <!-- right column -->
+
+                <!--/.col (right) -->
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->

@@ -1,0 +1,172 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+
+        </div><!-- /.container-fluid -->
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-md-12">
+
+                    <div class="card card-info">
+                        <div class="card-header">
+                            <h3 class="card-title">Product Details</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="card-tools">
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control"
+                                                    placeholder="Search Product By Name">
+                                                <div class="input-group-append">
+                                                    <div class="btn btn-primary">
+                                                        <i class="fas fa-search"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="col-md-3 "></div>
+                                    <div class="col-md-3 float-right">
+                                                <a href="invoice-print.html" target="_blank" class="btn btn-info btn-sm float-right"><i
+                                                    class="fa fa-print"></i> Print</a>
+                                                <button type="button" class="btn btn-info btn-sm float-right"
+                                                    style="margin-right: 5px;">
+                                                    <i class="fa fa-download"></i> Generate PDF
+                                                </button>
+                                    </div>
+                                </div>
+                              
+                                        <!-- this row will not appear when printing -->
+                                        <!-- <div class="row no-print">
+                                            <div class="col-12">
+                                              
+                                            </div>
+                                        </div> -->
+                                        <div class="row">
+                                        <table id="example1" class="table table-bordered table-striped dataTable"
+                                            role="grid" aria-describedby="example1_info">
+                                            <thead>
+                                                <tr role="row">
+                                                    <th class="sorting_desc" tabindex="0" aria-controls="example1"
+                                                    rowspan="1" colspan="1"
+                                                    aria-label="Rendering engine: activate to sort column ascending"
+                                                    aria-sort="descending" style="width: 203.4px;">Product Name</th>
+                                                    <th class="sorting_desc" tabindex="0" aria-controls="example1"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Rendering engine: activate to sort column ascending"
+                                                        aria-sort="descending" style="width: 203.4px;">HSN Code</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="example1"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Browser: activate to sort column ascending"
+                                                        style="width: 262.6px;">
+                                                        No. of Pieces</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="example1"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Browser: activate to sort column ascending"
+                                                        style="width: 262.6px;">
+                                                        Remaining Items</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="example1"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Browser: activate to sort column ascending"
+                                                        style="width: 262.6px;">
+                                                        Buying Date</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="example1"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Browser: activate to sort column ascending"
+                                                        style="width: 262.6px;">
+                                                        Cost Price</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="example1"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Browser: activate to sort column ascending"
+                                                        style="width: 262.6px;">
+                                                        Selling Price</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="example1"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Browser: activate to sort column ascending"
+                                                        style="width: 262.6px;">
+                                                        Expiry Date</th>
+                                                    <th >
+                                                     <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="option1">
+                                                            <label class="form-check-label">All</label>
+                                                          </div>
+                                                    </th>
+                                                    <!-- <th>  <img src={{orm.img}} alt="delete" height=30px" width="30px"></th> -->
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr role="row" class="odd">
+                                                    <td class="sorting_1">Webkit</td>
+                                                    <td>Safari 1.2</td>
+                                                    <td>OSX.3</td>
+                                                    <td>Safari 1.2</td>
+                                                    <td>OSX.3</td>
+                                                    <td>OSX.3</td>
+                                                    <td>Safari 1.2</td>
+                                                    <td>OSX.3</td>
+                                                    <td > 
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="option1">
+                                                           
+                                                          </div> </td>
+
+                                                </tr>
+                                            </tbody>
+
+                                        </table></div>
+                    
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-5">
+                                        <div class="dataTables_info" id="example1_info" role="status"
+                                            aria-live="polite">Showing 1 to 10
+                                            of 57 entries</div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-7">
+                                        <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
+                                            <ul class="pagination">
+                                                <li class="paginate_button page-item previous disabled"
+                                                    id="example1_previous"><a href="#" aria-controls="example1"
+                                                        data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                                                <li class="paginate_button page-item active"><a href="#"
+                                                        aria-controls="example1" data-dt-idx="1" tabindex="0"
+                                                        class="page-link">1</a></li>
+                                                <li class="paginate_button page-item "><a href="#"
+                                                        aria-controls="example1" data-dt-idx="2" tabindex="0"
+                                                        class="page-link">2</a></li>
+                                                <li class="paginate_button page-item "><a href="#"
+                                                        aria-controls="example1" data-dt-idx="3" tabindex="0"
+                                                        class="page-link">3</a></li>
+                                                <li class="paginate_button page-item "><a href="#"
+                                                        aria-controls="example1" data-dt-idx="4" tabindex="0"
+                                                        class="page-link">4</a></li>
+                                                <li class="paginate_button page-item "><a href="#"
+                                                        aria-controls="example1" data-dt-idx="5" tabindex="0"
+                                                        class="page-link">5</a></li>
+                                                <li class="paginate_button page-item "><a href="#"
+                                                        aria-controls="example1" data-dt-idx="6" tabindex="0"
+                                                        class="page-link">6</a></li>
+                                                <li class="paginate_button page-item next" id="example1_next"><a
+                                                        href="#" aria-controls="example1" data-dt-idx="7" tabindex="0"
+                                                        class="page-link">Next</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+        </div>
+    </section>
+</div>
